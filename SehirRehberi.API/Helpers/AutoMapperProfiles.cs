@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using SehirRehberi.API.Data;
 using SehirRehberi.API.Dtos;
 using SehirRehberi.API.Models;
 using System;
@@ -20,6 +21,8 @@ namespace SehirRehberi.API.Helpers
             CreateMap<City, CityForDetailDto>();
             CreateMap<User, UserForLoginDto>();
             CreateMap<User, UserForRegisterDto>();
+            CreateMap<Photo, PhotoForCreationDto>();
+            CreateMap<PhotoForReturnDto, Photo>(); //Photo'yu PhotoForReturnDto'ya map edilir.
         }
     }
 }

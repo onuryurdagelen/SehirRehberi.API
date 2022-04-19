@@ -45,6 +45,7 @@ namespace SehirRehberi.API
             services.AddScoped<IAuthRepository, AuthRepository>();
 
             var key = Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value);
+            services.Configure<CloudinarySettings>(Configuration.GetSection("CloudinarySettings")); // Git CloudinarySettings'i al CloudinarySettings'e map et diyoruz.
             //appsettings.json dosyasindaki token'i key'e atadik.
             
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options => 
